@@ -26,11 +26,10 @@ def exercicio2():
     carros = {}
     
 
-    while Nomecarro != 'SAIR':
+    while perg != 'SAIR':
         Nomecarro = input("qual seu(s) carro: ")
-        if Nomecarro != "SAIR":
-            carros[Nomecarro] = float(input("qual o valor desse carro: "))
-
+        carros[Nomecarro] = float(input("qual o valor desse carro: "))
+        perg = input("Deseja sair?\nDigite 'SAIR' caso queira: ")
     else:
         print("Saindo")
     print(carros)

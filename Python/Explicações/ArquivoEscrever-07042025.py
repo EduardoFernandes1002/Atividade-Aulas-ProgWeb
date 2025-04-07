@@ -1,0 +1,5 @@
+arquivo = open('Python\\ArquivosAcesso(explicacao)\\Bomd1a.txt', 'a', encoding="utf-8")
+arquivo.write("\nBom D1as")
+arquivo = open('Python\\ArquivosAcesso(explicacao)\\Bomd1a.txt', 'r', encoding="utf-8")
+print(arquivo.read())
+arquivo.close()

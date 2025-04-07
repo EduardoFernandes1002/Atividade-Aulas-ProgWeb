@@ -1,5 +1,5 @@
 Lista = [1,2,3]
-Lista2 = list(range(10))
+lista2 = []
 
 print(lista2)
 
