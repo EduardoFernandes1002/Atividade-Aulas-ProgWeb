@@ -23,14 +23,14 @@ def exercicio1():
 
 def exercicio2():
     Nomecarro: str = ''
+    carros = {}
     
 
-    while Nomecarro == 'SAIR':
+    while Nomecarro != 'SAIR':
         Nomecarro = input("qual seu(s) carro: ")
-        valor: float = input("qual o valor desse carro: ")
-        carros = {
-            Nomecarro: valor
-        }
+        if Nomecarro != "SAIR":
+            carros[Nomecarro] = float(input("qual o valor desse carro: "))
+
     else:
         print("Saindo")
     print(carros)
