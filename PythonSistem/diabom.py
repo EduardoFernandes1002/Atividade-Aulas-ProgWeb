@@ -2,19 +2,51 @@ TarefaDic = {}
 escolha: str = 'escolha'
 
 def Cadastrar():
-    tarefa = input("Digite a sua tarefa (titulo): ")
-    TarefaDic[tarefa] = 'Pendente'
-    
+    while True:
+        tarefa = str(input("\nDigite a sua tarefa (titulo): "))
+        if tarefa != '':
+            TarefaDic[tarefa] = 'Pendente'
+            print(f"\nTarefa '{tarefa}' cadastrada com sucesso!\n")
+            break
+        else:
+            print("\nTarefa não pode estar vazia\n")
+
 def Listar():
-    for i, (titulo, status) in enumerate(TarefaDic.items()):
-        print(f"{i + 1}°: Titulo = {titulo}, Status = {status}")
+    if TarefaDic:
+        for i, (titulo, status) in enumerate(TarefaDic.items()):
+            print(f"{i + 1}ª: Titulo = {titulo}, Status = {status}")
+        return True
+    print("\nSem tarefas cadastradas!\nTente adicionar uma tarefa!\n")
+    return False
 
 def Concluir():
-    input
-    Listar()
+    cheked = Listar()
+    if not cheked:
+        return
+    
+    while True:
+        TarefaP = input(f"\nDigite qual tarefa você concluiu das acima:\n")
+        if TarefaP in TarefaDic:
+            TarefaDic[TarefaP] = 'Concluido'
+            print("\nTarefa Concluida!\n")
+            break
+        else:
+            print("\nTarefa não Existe, tente digitar algo valido\n")
 
 def Excluir():
-    pass
+    cheked = Listar()
+    if not cheked:
+        return
+
+    while True:
+        TarefaE = input(f"\nDigite qual tarefa você vai excluir das acima:\n")
+        if TarefaE in TarefaDic:
+            TarefaDic.pop(TarefaE)
+            print(f"\nTarefa '{TarefaE}' excluida com sucesso!\n")
+            break
+        else:
+            print("\nTarefa não Existe, tente digitar algo valido\n")
+    
 
 print("Bem vindo")
 
@@ -36,6 +68,6 @@ while escolha != '':
         case '4':
             Excluir()
         case '':
-            escolha = ''
+            pass
         case _: 
             print("Digite algo valido, Tente novamente!")
