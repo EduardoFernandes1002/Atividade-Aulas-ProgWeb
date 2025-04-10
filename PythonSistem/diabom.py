@@ -1,5 +1,5 @@
 TarefaDic = {}
-escolha: str = ''
+escolha: str = 'escolha'
 
 def Cadastrar():
     tarefa = input("Digite a sua tarefa (titulo): ")
@@ -18,13 +18,13 @@ def Excluir():
 
 print("Bem vindo")
 
-while escolha.capitalize() != 'SAIR':
+while escolha != '':
     escolha = str(input("O que gostaria de fazer agora?\n"
                 + "- Para Cadastrar tarefa digite '1'\n"
                 + "- Para Listar tarefas digite '2'\n"
                 + "- Para Concluir tarefa digite '3'\n"
                 + "- Para Excluir tarefa digite '4'\n"
-                + "- Caso queira parar digite 'Sair'\n"
+                + "- Caso queira parar digite deixe em branco\n"
                 + "Digite sua escolha: "))
     match escolha:
         case '1':
@@ -35,5 +35,7 @@ while escolha.capitalize() != 'SAIR':
             Concluir()
         case '4':
             Excluir()
+        case '':
+            escolha = ''
         case _: 
             print("Digite algo valido, Tente novamente!")
