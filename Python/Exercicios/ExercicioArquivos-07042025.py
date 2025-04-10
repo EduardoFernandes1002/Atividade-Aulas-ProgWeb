@@ -34,7 +34,13 @@ def exercicio5():
     linhas = [linha.strip() for linha in linhas]
     linhas.sort()
 
-    for linha in linhas:
-        print(linha)
+    with open('Python/ArquivosAcess(Exercicios)/frases_ordenadas.txt', 'a', encoding='utf-8') as arquivo2:
+        for linha in linhas:
+            arquivo2.write(linha+'\n')
+    with open('Python/ArquivosAcess(Exercicios)/frases_ordenadas.txt', 'r', encoding='utf-8') as arquivo2:
+        print(arquivo2.read())
+        
+    arquivo1.close()
+    arquivo2.close()
        
 exercicio5()
