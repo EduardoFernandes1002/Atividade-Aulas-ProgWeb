@@ -14,7 +14,7 @@ def Cadastrar():
 def Listar():
     if TarefaDic:
         for i, (titulo, status) in enumerate(TarefaDic.items()):
-            print(f"{i + 1}ª: Titulo = {titu    lo}, Status = {status}")
+            print(f"{i + 1}ª: Titulo = {titulo}, Status = {status}")
         return True
     print("\nSem tarefas cadastradas!\nTente adicionar uma tarefa!\n")
     return False
@@ -51,6 +51,7 @@ def Excluir():
 print("Bem vindo")
 
 while escolha != '':
+    
     escolha = str(input("O que gostaria de fazer agora?\n"
                 + "- Para Cadastrar tarefa digite '1'\n"
                 + "- Para Listar tarefas digite '2'\n"
@@ -58,6 +59,7 @@ while escolha != '':
                 + "- Para Excluir tarefa digite '4'\n"
                 + "- Caso queira parar digite deixe em branco\n"
                 + "Digite sua escolha: "))
+    
     match escolha:
         case '1':
             Cadastrar()
